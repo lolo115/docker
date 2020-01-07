@@ -1,4 +1,5 @@
 FROM debian:buster
+# Inspired by https://github.com/gettyimages/docker-spark
 MAINTAINER Laurent Leturgez "leturgezl\@/gmail.com"
 
 RUN apt-get update \
@@ -26,7 +27,6 @@ RUN rm -rf /var/lib/apt/lists/*
 
 RUN pip install numpy pandas matplotlib azure statsmodels flask flask-api jupyter
 
-# http://blog.stuart.axelbrooke.com/python-3-on-spark-return-of-the-pythonhashseed
 ENV PYTHONHASHSEED 0
 ENV PYTHONIOENCODING UTF-8
 ENV PIP_DISABLE_PIP_VERSION_CHECK 1
