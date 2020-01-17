@@ -4,6 +4,7 @@ services:
     image: premiseo:spark3.0
     command: bin/spark-class org.apache.spark.deploy.master.Master -h master
     hostname: master
+    container_name: spark_master_1
     environment:
       MASTER: spark://master:7077
       SPARK_CONF_DIR: /conf
@@ -29,6 +30,7 @@ services:
     image: premiseo:spark3.0
     command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
     hostname: worker
+    container_name: spark_worker_1
     environment:
       SPARK_CONF_DIR: /conf
       SPARK_WORKER_CORES: 2
