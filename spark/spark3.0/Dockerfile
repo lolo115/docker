@@ -3,7 +3,7 @@ MAINTAINER Premiseo "https://premiseo.com"
 # github link to follow
 
 RUN apt-get update \
- && apt-get install -y locales \
+ && apt-get install -y locales vim \
  && dpkg-reconfigure -f noninteractive locales \
  && locale-gen C.UTF-8 \
  && /usr/sbin/update-locale LANG=C.UTF-8 \
@@ -16,6 +16,9 @@ RUN apt-get update \
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
+
+RUN groupadd -g 1001 docker
+RUN useradd -u 1001 -g docker -G root docker
 
 RUN apt-get update \
  && apt-get install -y curl unzip \
@@ -45,6 +48,8 @@ ENV HADOOP_VERSION 3.2.0
 ENV HADOOP_HOME /usr/hadoop-$HADOOP_VERSION
 ENV HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 ENV PATH $PATH:$HADOOP_HOME/bin
+ENV HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"
+
 RUN curl -sL --retry 3 \
   "http://archive.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz" \
   | gunzip \
