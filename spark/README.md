@@ -1,1 +1,1 @@
-various containers configuration for spark
+various container configurations for spark
