@@ -28,6 +28,7 @@ services:
       - ./conf/master:/conf
       - ./data:/data
       - ./jars:/jars
+      - ./code:/code
 
   worker:
     image: premiseo:spark2.4.4
@@ -60,3 +61,5 @@ services:
       - ./conf/worker:/conf
       - ./data:/data
       - ./jars:/jars
+      - ./code:/code
+
