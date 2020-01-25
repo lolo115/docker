@@ -1,7 +1,7 @@
 version: "2.2"
 services:
   master:
-    image: premiseo:spark3.0
+    image: premiseo/spark:spark3.0
     user: "${UID}:${GID}"
     command: bin/spark-class org.apache.spark.deploy.master.Master -h master
     hostname: master
@@ -31,7 +31,7 @@ services:
       - ../code:/code
 
   worker:
-    image: premiseo:spark3.0
+    image: premiseo/spark:spark3.0
     user: "${UID}:${GID}"
     command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
     hostname: worker
