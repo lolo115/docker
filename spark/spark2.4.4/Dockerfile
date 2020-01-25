@@ -30,7 +30,7 @@ RUN apt-get update \
 RUN pip3 install py4j
 
 # Install python package
-RUN pip3 install numpy pandas matplotlib jupyter statsmodels
+RUN pip3 install numpy pandas matplotlib jupyter statsmodels sparkmeasure
 
 # http://blog.stuart.axelbrooke.com/python-3-on-spark-return-of-the-pythonhashseed
 ENV PYTHONHASHSEED 0
