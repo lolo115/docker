@@ -26,9 +26,9 @@ services:
       - "8080:8080"
     volumes:
       - ./conf/master:/conf
-      - ./data:/data
-      - ./jars:/jars
-      - ./code:/code
+      - ../data:/data
+      - ../jars:/jars
+      - ../code:/code
 
   worker:
     image: premiseo:spark2.4.4
@@ -59,7 +59,7 @@ services:
       - "4041:4040"
     volumes:
       - ./conf/worker:/conf
-      - ./data:/data
-      - ./jars:/jars
-      - ./code:/code
+      - ../data:/data
+      - ../jars:/jars
+      - ../code:/code
 
