@@ -26,7 +26,7 @@ services:
       - "8080:8080"
     volumes:
       - ./conf/master:/conf
-      - ./data:/tmp/data
+      - ./data:/data
       - ./jars:/jars
 
   worker:
@@ -58,5 +58,5 @@ services:
       - "4041:4040"
     volumes:
       - ./conf/worker:/conf
-      - ./data:/tmp/data
+      - ./data:/data
       - ./jars:/jars
