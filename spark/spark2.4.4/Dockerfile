@@ -76,7 +76,7 @@ RUN curl -sL --retry 3 \
 && chown -R root:root $HADOOP_HOME
 
 # SPARK
-ENV SPARK_VERSION 2.4.5
+ENV SPARK_VERSION 2.4.4
 #ENV SPARK_PACKAGE spark-${SPARK_VERSION}-bin-hadoop3.2
 ENV SPARK_PACKAGE spark-${SPARK_VERSION}-bin-without-hadoop
 ENV SPARK_HOME /usr/spark-${SPARK_VERSION}
