@@ -25,7 +25,7 @@ RUN pip install --upgrade pip
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
 
-RUN pip install numpy pandas matplotlib azure statsmodels flask flask-api jupyter
+RUN pip install numpy pandas matplotlib statsmodels Flask-RESTful flask flask-api jupyter scikit-learn 
 
 ENV PYTHONHASHSEED 0
 ENV PYTHONIOENCODING UTF-8
