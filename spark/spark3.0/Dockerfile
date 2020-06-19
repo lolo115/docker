@@ -40,7 +40,7 @@ RUN apt-get update \
 && apt-get install -y openjdk-8-jdk 
 	
 # SCALA & SBT
-ENV SCALA_VERSION "2.11.12" 
+ENV SCALA_VERSION "2.12.10" 
 ENV SCALA_HOME /usr/scala-${SCALA_VERSION} 
 ENV	SBT_VERSION "1.3.10" 
 ENV	SBT_HOME /usr/sbt 
@@ -76,7 +76,7 @@ RUN curl -sL --retry 3 \
 && chown -R root:root $HADOOP_HOME
 
 # SPARK
-ENV SPARK_VERSION 3.0.0-preview2
+ENV SPARK_VERSION 3.0.0
 #ENV SPARK_PACKAGE spark-${SPARK_VERSION}-bin-hadoop3.2
 ENV SPARK_PACKAGE spark-${SPARK_VERSION}-bin-without-hadoop
 ENV SPARK_HOME /usr/spark-${SPARK_VERSION}
