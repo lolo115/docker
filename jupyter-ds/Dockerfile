@@ -1,4 +1,6 @@
 FROM debian:buster
+MAINTAINER Premiseo "https://premiseo.com"
+
 # github link to follow
 
 RUN apt-get update \
