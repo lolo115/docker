@@ -1,0 +1,17 @@
+version: "2.2"
+services:
+        jupyter-ds:
+                image: premiseo/jupyter-ds:latest
+                command: /usr/local/bin/jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
+                hostname: jupyter-ds
+                container_name: jupyter-ds
+                environment:
+                        JUPYTER_HOME: "/var/tmp/jupyter"
+                expose:
+                        - 8888
+                ports:
+                        - "8888:8888"
+                volumes:
+                        - "../data:${JUPYTER_HOME}/data"
+                        - "../code:${JUPYTER_HOME}/code"
+                        
