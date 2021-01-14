@@ -12,6 +12,6 @@ services:
                 ports:
                         - "8888:8888"
                 volumes:
-                        - "../data:${JUPYTER_HOME}/data"
-                        - "../code:${JUPYTER_HOME}/code"
+                        - "./data:${JUPYTER_HOME}/data"
+                        - "./code:${JUPYTER_HOME}/code"
                         
